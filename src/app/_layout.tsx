@@ -1,6 +1,6 @@
 import "../global.css";
 import { Slot, Stack, Tabs } from "expo-router";
-import AntDesign from "@expo/vector-icons/AntDesign";
+import {Ionicons} from "@expo/vector-icons";
 
 export default function Layout() {
   return (
@@ -11,7 +11,7 @@ export default function Layout() {
           title: "Home",
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
-            <AntDesign name="home" color={color} size={size} />
+            <Ionicons name="home-outline" color={color} size={size} />
           ),
         }}
       />
@@ -21,7 +21,7 @@ export default function Layout() {
           title: "Profile",
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
-            <AntDesign name="user" color={color} size={size} />
+            <Ionicons name="person-outline" color={color} size={size} />
           ),
         }}
       />
@@ -31,7 +31,7 @@ export default function Layout() {
           title: "History",
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
-            <AntDesign name="clockcircle" color={color} size={size} />
+            <Ionicons name="time-outline" color={color} size={size} />
           ),
         }}
       />
