@@ -1,40 +1,10 @@
-import "../global.css";
-import { Slot, Stack, Tabs } from "expo-router";
-import {Ionicons} from "@expo/vector-icons";
+import { ClerkProvider } from '@clerk/clerk-expo'
+import { Slot } from 'expo-router'
 
 export default function Layout() {
   return (
-    <Tabs>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: "Home",
-          headerShown: false,
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home-outline" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="profile"
-        options={{
-          title: "Profile",
-          headerShown: false,
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="person-outline" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="history"
-        options={{
-          title: "History",
-          headerShown: false,
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="time-outline" color={color} size={size} />
-          ),
-        }}
-      />
-    </Tabs>
-  );
+    <ClerkProvider publishableKey={process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!}>
+      <Slot />
+    </ClerkProvider>
+  )
 }
